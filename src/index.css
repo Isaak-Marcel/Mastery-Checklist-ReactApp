@@ -1,13 +1,97 @@
+html{
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: interMedium;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.masterychecklist{
+  color: white;
+  margin: 0;
+  font-family: interRegular;
+  padding-left: 10px;
+  padding-top: 40px;
+}
+
+@font-face{
+  font-family: interMedium;
+  src: url(../public/Fonts/Inter-Medium.ttf);
+}
+@font-face{
+  font-family: interSemiBold;
+  src: url(../public/Fonts/Inter-SemiBold.ttf);
+}
+@font-face{
+  font-family: interRegular;
+  src: url(../public/Fonts/Inter-Regular.ttf);
+}
+
+.App{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./Images/dojo\ 1\ up.jpg);
+  background-size: cover;
+  background-position: bottom ;
+} 
+
+.taskRectangle{
+  margin: auto;
+  height: 100vh;
+  max-width: 702px;
+  background-color: rgba(0, 0, 0, 0.29);
+  
+}
+
+
+.LoginButtonTopp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 7px;
+  margin-top: 7px;
+}
+.logOut {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 110px;
+  margin-top: 7px;
+}
+
+/* Task Style */
+
+.task-div{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family:interRegular ;
+  outline: solid green 3px;
+  
+}
+
+.taskText{
+  cursor: pointer;
+}
+.scores{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.score{
+  padding-right: 60px;
+}
+
+.signForm{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.done{
+  text-decoration: line-through;
+  cursor: pointer;
+  
 }
