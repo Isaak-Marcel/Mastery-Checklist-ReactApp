@@ -5,7 +5,7 @@ import {auth} from '../Config/firebase'
 
 function SignUp(props) {
 
-    
+  
     const [newUser,setNewUser] = useState({
         email: '',
         password: ''
@@ -18,11 +18,11 @@ function SignUp(props) {
         
         createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
         .then((userCredential) =>{
-            const user = userCredential.user
+            // const user = userCredential.user
         })
         .catch((error) =>{
-            const errorCode = error.code;
-            const errorMessage = error.message;
+           // const errorCode = error.code;
+           // const errorMessage = error.message;
         })
 
     }

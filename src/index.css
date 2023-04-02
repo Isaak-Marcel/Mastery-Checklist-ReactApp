@@ -42,6 +42,9 @@ body {
   height: 100vh;
   max-width: 702px;
   background-color: rgba(0, 0, 0, 0.29);
+  display: flex;
+  flex-direction: column;
+  
   
 }
 
@@ -67,22 +70,61 @@ body {
   display: flex;
   justify-content: space-between;
   color: white;
-  font-family:interRegular ;
-  outline: solid green 3px;
   
+  background-color: rgba(217, 217, 217, 0.35);
+  margin-bottom: 20px;
+  border-radius: 32px;
+  border: none;
+  padding-left: 10px;
+  min-height: 47px;;
+
+  font-family:interRegular ;
+
+}
+.task-text{
+  /*add later */
+}
+.scores{
+  display: flex;
+  
+  align-items: center;
+}
+.score {
+    width: 40px;
+    color: rgba(255,215,0,1);
+    padding-left: 10px;
+    
 }
 
 .taskText{
   cursor: pointer;
 }
-.scores{
-  display: flex;
-  justify-content: space-between;
+
+.imp{
+  border-right: solid 2px black;
+  padding-right: 0px;
+
+}
+
+
+.delete-button{
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 32px;
+  color: white;
+  height: 34px;
+  border: none;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.img-under-form{
   
+  height: 100px;
+  width: 650px;
+  align-self: center;
 }
-.score{
-  padding-right: 60px;
-}
+
+
 
 .signForm{
   display: flex;
@@ -93,5 +135,66 @@ body {
 .done{
   text-decoration: line-through;
   cursor: pointer;
+}
+
+
+/* Reactangle Input*/
+
+.RecFrom{
+  padding-top: 10px;
+  display: flex;
+}
+
+.input{
+  background-color: rgba(217, 217, 217, 0.35);
+  border-radius: 32px;
+  color: white;
+  height: 47px;
+  border: none;
+  margin-left: 2px;
+
   
 }
+
+.text-input{ 
+    flex-grow: 1;
+    padding-left: 10px;
+    margin-right:2px ;
+   
+}
+
+.cont-num-inputs{
+  flex-shrink: 0;
+}
+
+.num-input{
+  width: 60px;
+  text-align: center;
+  margin: 2px;
+  
+}
+
+
+
+input::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: white;
+}
+
+@media all and (width < 600px){
+  .RecFrom{
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cont-num-inputs{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+  }
+
+}
+
