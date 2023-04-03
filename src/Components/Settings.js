@@ -2,7 +2,9 @@ import React from 'react'
 
 function Settings() {
   return (
-    <div>Settings</div>
+    <div style={{zIndex: '1'}}>
+      Settings
+    </div>
   )
 }
 

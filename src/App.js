@@ -6,6 +6,8 @@ import Settings from "./Components/Settings";
 import { React, useState } from "react";
 import { auth } from "./Config/firebase";
 import {useAuthState} from 'react-firebase-hooks/auth'
+import Switch from "./Components/Switch";
+import PomodoroTimer from "./Components/Timer/PomodoroTimer";
 
 
 
@@ -13,8 +15,9 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false) 
   const [showLogin, setshowLogin] = useState(false) 
   const [user] = useAuthState(auth)
-  console.log(user)
+  const [checked,setChecked] =  useState(true)
   
+ 
   const toggleSignUp = ()=>{
     setShowSignUp(!showSignUp)
   }
@@ -28,6 +31,11 @@ function App() {
     setshowLogin(!showLogin)
     setShowSignUp(!showSignUp)
   }
+
+  const toogleTimer = ()=>{
+    setChecked(!checked)
+  }
+
   
   let background;
 
@@ -39,14 +47,19 @@ function App() {
         {user ? (
           <Logout />
         ) : (
-          <button className="LoginButtonTopp" onClick={toggleSignUp}>Login/SignUp</button>
+          <button className="LoginButtonTopp" style={{zIndex: '1'}} onClick={toggleSignUp}>Login/SignUp</button>
         )}
-        <TaskRectangle/>
+        <Switch checked={checked} handleChange={toogleTimer} />
+        
+        <TaskRectangle> </TaskRectangle>
+        
+        { checked && < PomodoroTimer/> }
         <h1>{user?.email} </h1>
 
-        {showSignUp && !user && <SignUp toggleSignUp={toggleSignUp} toogleShowLogin={toogleShowLogin} />}
-        {showLogin && !user &&  <Login closeLog={closeLog} toogleShowLogin={toogleShowLogin}/>}
+        {showSignUp && !user && <SignUp style={{zIndex: '1'}} toggleSignUp={toggleSignUp} toogleShowLogin={toogleShowLogin} />}
+        {showLogin && !user &&  <Login style={{zIndex: '1'}} closeLog={closeLog} toogleShowLogin={toogleShowLogin}/>}
         {user &&  <Settings user={user} background={background}/> } 
+        
     </div>
     
   );
