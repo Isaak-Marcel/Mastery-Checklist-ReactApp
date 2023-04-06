@@ -20,3 +20,10 @@
 .slider.green .thumb{
     background-color:  green;
 }
+
+
+.timer-settings-button {
+    outline: none;
+    border: none;
+    color: white;
+}

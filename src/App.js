@@ -47,7 +47,7 @@ function App() {
         {user ? (
           <Logout />
         ) : (
-          <button className="LoginButtonTopp" style={{zIndex: '1'}} onClick={toggleSignUp}>Login/SignUp</button>
+          <button className="LoginButtonTopp log-something"  onClick={toggleSignUp}>Login/SignUp</button>
         )}
         <Switch checked={checked} handleChange={toogleTimer} />
         

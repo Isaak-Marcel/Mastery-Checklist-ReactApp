@@ -75,7 +75,7 @@ function TaskRectangle() {
         await deleteDoc(doc(db, `users/${user.uid}/tasks/${id}`));
       } else {
         const newToDoArray = [...toDoArray];
-        const index = newToDoArray.findIndex((task) => task.taskText === taskText);
+        const index = newToDoArray.findIndex((task) => task.identification === taskText);
         newToDoArray.splice(index, 1);
         setToDoArray(newToDoArray);
       } 

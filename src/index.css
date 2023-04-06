@@ -8,6 +8,10 @@ body {
   font-family: interMedium;
 }
 
+.App{
+  
+}
+
 
 
 .masterychecklist{
@@ -92,13 +96,31 @@ body {
 .pomodoro-cont{
   height: 500px;
   width: 14vw;
-  border: 2px solid gray;
   position: absolute;
   margin-top: 50px;
   color: white;
   top: 0;
   margin-left: 15px;
   margin-top: 100px;
+  padding-left: 20px;
+}
+
+.btn-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: row;
+}
+@media all and (width < 1186px){ 
+  .btn-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .pomodoro-cont{
+    padding-left: 0;
+  }
 }
 
 @media all and (width < 1037px){
@@ -110,16 +132,14 @@ body {
     margin: 0;
     margin-top: 100px;
     position: absolute;
+    visibility: hidden;
     
 
 
 
     
   }
-  .switch{
-    
 
-  }
 
 
 
@@ -153,20 +173,7 @@ body {
 /* Log Buttons */
 
 
-.LoginButtonTopp {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 7px;
-  margin-top: 7px;
-}
-.logOut {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 110px;
-  margin-top: 7px;
-}
+
 
 /* Task Style */
 
@@ -187,9 +194,18 @@ body {
 }
 .task-text{
   /*add later */
+  cursor: pointer;
+  font-family: interRegular;
+  flex-grow: 1;
+  
+}
+.div-done-class{
+  background-color: green;
+  opacity: 45%;
 }
 .scores{
   display: flex;
+  font-family: interMedium;
   
   align-items: center;
 }
@@ -202,6 +218,7 @@ body {
 
 .taskText{
   cursor: pointer;
+
 }
 
 .imp{
@@ -219,6 +236,7 @@ body {
   border: none;
   margin-right: 20px;
   width: 80px;
+  cursor: crosshair;
 }
 
 .img-under-form{
@@ -248,6 +266,7 @@ body {
 .RecFrom{
   padding-top: 10px;
   display: flex;
+  font-family: interMedium;
 }
 
 .input{
@@ -257,7 +276,9 @@ body {
   height: 47px;
   border: none;
   margin-left: 2px;
+  font-family: interMedium;
 
+  font-size: 15px;
   
 }
 
@@ -265,6 +286,7 @@ body {
     flex-grow: 1;
     padding-left: 10px;
     margin-right:2px ;
+    padding-right: 10px;
    
 }
 

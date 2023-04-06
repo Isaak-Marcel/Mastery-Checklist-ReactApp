@@ -1,0 +1,46 @@
+.LoginButtonTopp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 7px;
+    margin-top: 7px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .logOut {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 110px;
+    margin-top: 7px;
+    cursor: pointer;
+  }
+
+  .log-something{
+    background-color: rgba(217, 217, 217, 0.35);
+    border-radius: 32px;
+    border: none;
+    margin-top: 10px;
+    padding: 0px 12px 0px 12px;
+    height: 38px;
+    font-size: 16px;
+    
+    color: white;
+    font-family: interMedium ;
+  }
+  .switch{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: white;
+
+  }
+  @media all and (width < 1037px){
+
+    .log-something{font-size: 14px; margin-top: 7px;}
+    .switch-checked{
+        visibility: hidden;
+    }
+
+  }
+

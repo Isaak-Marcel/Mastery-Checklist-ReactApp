@@ -31,7 +31,7 @@ function TimerSettings() {
         />
         <div style={{textAlign: 'center', marginTop: '20px'}}>
           <CloseTimerSettings onClick={() => {settingsInfo.setShowSettings(false)}}/>
-        </div>;
+        </div>
     </div>
   )
 }
