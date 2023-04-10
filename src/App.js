@@ -20,6 +20,9 @@ function App() {
  
   const toggleSignUp = ()=>{
     setShowSignUp(!showSignUp)
+    if(showLogin){
+      setshowLogin(false)
+    }
   }
 
   const closeLog = ()=>{
@@ -56,7 +59,7 @@ function App() {
         { checked && < PomodoroTimer/> }
         <h1>{user?.email} </h1>
 
-        {showSignUp && !user && <SignUp style={{zIndex: '1'}} toggleSignUp={toggleSignUp} toogleShowLogin={toogleShowLogin} />}
+        {showSignUp && !user && <SignUp style={{zIndex: '1'}} toggleSignUp={toggleSignUp} closeLog={closeLog} toogleShowLogin={toogleShowLogin} />}
         {showLogin && !user &&  <Login style={{zIndex: '1'}} closeLog={closeLog} toogleShowLogin={toogleShowLogin}/>}
         {user &&  <Settings user={user} background={background}/> } 
         

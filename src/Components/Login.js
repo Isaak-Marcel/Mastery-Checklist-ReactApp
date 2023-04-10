@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {signInWithEmailAndPassword   } from 'firebase/auth';
 import {auth} from '../Config/firebase'
 
-function Login(props) {
+function Login({toogleShowLogin,closeLog }) {
     const [loginUser,setloginUser] = useState({
         email: '',
         password: ''
@@ -25,26 +25,30 @@ function Login(props) {
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Escape") {
-            props.toggleSignUp()
+            closeLog()
           }
         }
         window.addEventListener('keydown', handleKeyDown)
         return () => {
           window.removeEventListener('keydown', handleKeyDown)
         }
-    }, [])
+    }, [closeLog,toogleShowLogin])
  
     return (
     <div style={signUpStyles}>
-      <h2>Login</h2>
-      
-      <form className='signForm'>
-        <input style={signFromItems} type='email' placeholder="Email" onChange={(e)=> setloginUser( {...loginUser, email: e.target.value} )}/>
-        <input style={signFromItems} type='password' placeholder="Password" onChange={(e)=> setloginUser( {...loginUser, password: e.target.value})}/>
-        <button style={signFromItems} onClick={submitSignIn}>Login</button>
-      </form>
-      <button style={signFromItems} onClick={props.closeLog}>Close</button>
-      <button onClick={props.toogleShowLogin}>Have an account, Sign Up?</button> 
+      <div className='sign-div'>
+          
+          <h2>Login</h2>      
+          <form className='signForm'>
+            <input style={signFromItems} type='email' placeholder="Email" onChange={(e)=> setloginUser( {...loginUser, email: e.target.value} )}/>
+            <input style={signFromItems} type='password' placeholder="Password" onChange={(e)=> setloginUser( {...loginUser, password: e.target.value})}/>
+            <button onClick={submitSignIn}>Login</button>
+          </form>
+          <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'center'}} className='buttons-under'>
+            <button onClick={toogleShowLogin}>Don't have an account, Sign Up?</button>
+            <button  className='close-button' onClick={closeLog}>Close</button>   
+          </div> 
+        </div>
     </div>
   ) 
 }

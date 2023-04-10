@@ -22,7 +22,7 @@ function Task({ toDoArray, toggleDone,  deleteTask}) {
             <h3 className="score imp">{elemnt.imp}</h3>
             <h3 className="score dif">{elemnt.dif}</h3> {/* Edit on double click */}
             {/* } <button>Edit</button> {*/}
-            <button onClick={(e) => handleDeleteTask(elemnt.id,e,elemnt.identification ) } className='delete-button' >Delete</button>
+            <button onClick={(e) => handleDeleteTask(elemnt.id,e,elemnt.identification ) } className='delete-button'>Delete</button>
           </div>
         </div>
       ))}

@@ -1,0 +1,73 @@
+.sign-div{
+    max-width: 400px;
+    width: 100%;
+    
+}
+
+.sign-div h2{
+    color: white;
+    font-family: interSemiBold;
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.signForm{
+    max-width: 100%;
+    padding: 0 10px 0 10px;
+    
+}
+
+.signForm input{
+    background-color: rgba(217, 217, 217, 0.35);
+    border-radius: 34px;
+    color: white;
+    height: 47px;
+    border: none;
+    margin-left: 2px;
+    font-family: interSemiBold;
+    font-size: 15px;
+    padding-left: 14px;
+}
+
+.sign-div .signForm button{
+    margin: 0 auto;
+    max-width: 400px;
+    height: 39px;
+    border: none;
+    border-radius: 34px;
+    background-color: white;
+    cursor: pointer;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.sign-div button{
+  
+    width: auto;
+    height: 30px;
+    border: none;
+    border-radius: 34px;
+    background-color: white;
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    font-family: interSemiBold;
+
+}
+
+
+.signForm button:hover{
+    opacity: 80%;
+}
+
+
+.sign-div  button:hover{
+    opacity: 89%;
+
+}
+.buttons-under button{
+   
+    margin-top: 20px;
+    height: 36px;
+    padding: 0 20px 0 20px;
+    width: 270px;
+}

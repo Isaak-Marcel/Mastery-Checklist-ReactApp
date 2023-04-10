@@ -3,7 +3,7 @@ import {createUserWithEmailAndPassword  } from 'firebase/auth';
 import {auth} from '../Config/firebase'
 
 
-function SignUp(props) {
+function SignUp({ toggleSignUp, toogleShowLogin, closeLog}) {
 
   
     const [newUser,setNewUser] = useState({
@@ -30,33 +30,35 @@ function SignUp(props) {
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Escape") {
-            props.toggleSignUp()
+            closeLog()
           }
+          
         }
         window.addEventListener('keydown', handleKeyDown)
         return () => {
           window.removeEventListener('keydown', handleKeyDown)
         }
-    }, [])
+    }, [closeLog])
  
     return (
     <div style={signUpStyles}>
-      <h2>Sign Up</h2>
-      
-      <form className='signForm'>
-        <input style={signFromItems} type='email' placeholder="Email" onChange={(e)=> setNewUser( {...newUser, email: e.target.value} )}/>
-        <input style={signFromItems} type='password' placeholder="Password" onChange={(e)=> setNewUser( {...newUser, password: e.target.value})}/>
-        <button style={signFromItems} onClick={(e) => submitSignUp(e)}>Sign Up</button>
-      </form>
-      <button style={signFromItems} onClick={props.toggleSignUp}>Close</button>
-      <button onClick={props.toogleShowLogin}>Have an account, Login in?</button>
+       <div className='sign-div'>
+          <h2>Sign Up</h2>
+          <form className='signForm'>
+            <input style={signFromItems} type='email' placeholder="Email" onChange={(e)=> setNewUser( {...newUser, email: e.target.value} )}/>
+            <input style={signFromItems} type='password' placeholder="Password" onChange={(e)=> setNewUser( {...newUser, password: e.target.value})}/>
+            <button style={signFromItems} onClick={(e) => submitSignUp(e)}>Sign Up</button>
+          </form>
+          <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'center'}} className='buttons-under'>
+            <button onClick={toogleShowLogin}>Have an account, Login in?</button>
+            <button  className='close-button' style={signFromItems} onClick={toggleSignUp}>Close</button>
+          </div>
+        </div>
     </div>
   ) 
 
 
 }
-
-
 
 const signFromItems = {
     marginBottom: '20px'
