@@ -2,7 +2,7 @@ import TaskRectangle from "./Components/TaskRectangle";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login.js";
 import Logout from "./Components/Logout";
-import Settings from "./Components/Settings";
+// import Settings from "./Components/Settings";
 import { React, useState } from "react";
 import { auth } from "./Config/firebase";
 import {useAuthState} from 'react-firebase-hooks/auth'
@@ -40,7 +40,7 @@ function App() {
   }
 
   
-  let background;
+  // let background;
 
 
   return (
@@ -57,11 +57,11 @@ function App() {
         <TaskRectangle> </TaskRectangle>
         
         { checked && < PomodoroTimer/> }
-        <h1>{user?.email} </h1>
+        
 
         {showSignUp && !user && <SignUp style={{zIndex: '1'}} toggleSignUp={toggleSignUp} closeLog={closeLog} toogleShowLogin={toogleShowLogin} />}
         {showLogin && !user &&  <Login style={{zIndex: '1'}} closeLog={closeLog} toogleShowLogin={toogleShowLogin}/>}
-        {user &&  <Settings user={user} background={background}/> } 
+        {/* {user &&  <Settings user={user} background={background}/> }  */}
         
     </div>
     
