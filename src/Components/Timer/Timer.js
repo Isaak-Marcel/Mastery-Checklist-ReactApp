@@ -5,6 +5,7 @@ import PlayButton from './PlayButton';
 import PauseButton from './PauseButton';
 import SettingsButton from './SettingsButton';
 import SettingsContext from '../SettingsContext';
+import beepSound from '../../SoundEffects/Electronic Timer Beeping 4X.wav'
 
 
 const red = '#f54e4e';
@@ -20,6 +21,8 @@ function Timer() {
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
   const modeRef = useRef(mode);
+
+  const audioRef = useRef(null);
 
   function tick() {
     secondsLeftRef.current--;
@@ -47,7 +50,9 @@ function Timer() {
         return;
       }
       if (secondsLeftRef.current === 0) {
+        audioRef.current.play();
         return switchMode();
+        
       }
 
       tick();
@@ -73,6 +78,7 @@ function Timer() {
             pathColor: mode === 'work' ? red : green,
             trailColor: 'rgba(255,255,255,.2)',
         })} />
+        <audio ref={audioRef} src={beepSound} />
         <div className='btn-cont'>
           <div style={{marginTop: '20px', display: 'flex' }}>
           { isPaused
