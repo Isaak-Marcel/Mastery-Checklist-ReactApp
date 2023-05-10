@@ -8,7 +8,6 @@ function Task({ toDoArray, toggleDone,  deleteTask}) {
   };
 
   const handleToggleDone = (id,identification ) => {
-    console.log(identification )
     toggleDone(id,identification );
   };
 

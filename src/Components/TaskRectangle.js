@@ -40,6 +40,7 @@ function TaskRectangle() {
 
         return unsubscribe;
       } else {
+        setUser(null)
         setToDoArray([]);
       }
     });
@@ -54,7 +55,7 @@ function TaskRectangle() {
   const addToTaskArray = async (e) => {
     e.preventDefault();
     const newTask = { ...task, sum: parseInt(task.imp) + parseInt(task.dif) };
-    if (user) {
+    if (user != null ) {
       await addDoc(collection(db, `users/${user.uid}/tasks`), newTask);
     } else {
       setToDoArray(sortTasks([...toDoArray, newTask]));
