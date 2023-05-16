@@ -103,7 +103,7 @@ function TaskRectangle() {
       <h1 className='masterychecklist'>Mastery checklist</h1>
       <form className='RecFrom'>
         
-        <input placeholder='Type task you want to finish' className='text-input input' type='text' value={task.taskText} onChange={(e) => setTask({ ...task, taskText: e.target.value })} />
+        <input placeholder='Type your task here' className='text-input input' type='text' value={task.taskText} onChange={(e) => setTask({ ...task, taskText: e.target.value })} />
         <div className='cont-num-inputs'>
           <input placeholder='Imp' type='number' className='num-input input' value={task.imp} onChange={(e) => setTask({ ...task, imp: e.target.value })} />
           <input placeholder='Dif' type='number' className='num-input input' value={task.dif} onChange={(e) => setTask({ ...task, dif: e.target.value })} />
